@@ -9,15 +9,14 @@ public class ImageTrackingFunction : MonoBehaviour
     public vid_title titleManager; // Reference to vid_title instance
     public MarqueeText textScroller1;
     public MarqueeText textScroller2;
-    public VideoPlayer videoPlayer_force;
-   
+
+    
 
     public void TargetSeen()
-    {
+    {   
+
         // Play the next video
         int currentIndex = videoController.PlayNextVideo();
-        videoPlayer_force.Play();
-        
         
         // Display the corresponding title
         titleManager.DisplayTitle(currentIndex);
@@ -26,8 +25,12 @@ public class ImageTrackingFunction : MonoBehaviour
         textScroller2.ToggleDirection();
 
     }
+ 
+    //  public void TargetNotSeen()
 
-    // public void TargetNotSeen()
-    // {   
-    // }
+    //  {   
+    //     int currentIndex = videoController.PlayNextVideo();
+    //     titleManager.DisplayTitle(currentIndex);
+
+    //  }
 }
